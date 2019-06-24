@@ -6,7 +6,7 @@ const app = express();
 
 
 // Init middleware
-app.use(logger);
+// app.use(logger);
 
 // Get All Members
 app.get('/api/members', (req, res) => {
@@ -17,6 +17,9 @@ app.get('/api/members', (req, res) => {
 app.get('/api/members/:id', (req, res) => {
     const found = members.some(member => member.id === parseInt(req.params.id));
 
+    found ? res.json(members.filter(member => member.id === parseInt(req.params.id))) : 
+    res.status(400).json({msg: `No member with the id of ${req.params.id} found`});
+})
 
 // Set static folder
 app.use(express.static(path.join(__dirname, '/public')));
