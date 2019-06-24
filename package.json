@@ -4,12 +4,17 @@
   "description": "Express Crash Course",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "dev": "nodemon index"
   },
   "author": "Victor Jonah",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
     "nodemon": "^1.19.1"
   }
 }
